@@ -1,0 +1,22 @@
+﻿@using Nathalia_Escola.Class
+@{
+    Layout = null;
+
+    //Conecta com o BD
+    BancoDeDados.DBConnect();
+
+    //Criar um objeto pessoa
+    usuario usuario = new usuario();
+
+    //Buscar os dados do formulario pelo método POST e inserir no objeto cliente
+    usuario.nome = Request.Form["nome"];
+    usuario.sobrenome = Request.Form["sobrenome"];
+    usuario.email = Request.Form["email"];
+    usuario.senha = Request.Form["senha"];
+    usuario.celular = Request.Form["celular"];
+    usuario.genero = Request.Form["genero"];
+
+    BancoDeDados.Cadastro_Usuario(usuario);
+    window.location.href = "./cadastro_prof.cshtml";
+
+}

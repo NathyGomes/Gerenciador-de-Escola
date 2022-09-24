@@ -1,0 +1,105 @@
+﻿@using Nathalia_Escola.Class
+@{
+    Layout = null;
+    BancoDeDados.DBConnect();
+}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="~/CSS/Styles.css">
+</head>
+
+<body class="body-cadastro-aluno">
+    <div class="form-body">
+        <div class="buttons-cadastro">
+            <button><a href="~/Cadastro/Cadastro_aluno/cadastro_aluno.cshtml">Cadastro Aluno</a></button>
+            <button><a href="~/Cadastro/Cadastro_Prof/cadastro_prof.cshtml">Cadastro professor</a></button>
+        </div>
+        <div class="container">
+            <div class="form-image">
+                <img src="~/Cadastro/Cadastro_aluno/animate-off.svg">
+            </div>
+            <div class="form">
+                <form action="~/Cadastro/ValidaCadastro.cshtml" id="formulario" method="post" name="formulario">
+                    <div class="form-header">
+                        <div class="title">
+                            <h1>Cadastro de Usuários</h1>
+                        </div>
+
+                        <div class="login-button">
+                            <button><a href="~/menu.cshtml">Menu</a></button>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-box">
+                            <label for="firstname">Primeiro Nome</label>
+                            <input id="firstname" type="text" name="nome" placeholder="Digite seu primeiro nome" required>
+                        </div>
+
+                        <div class="input-box">
+                            <label for="last-name">Sobrenome</label>
+                            <input id="last-name" type="text" name="sobrenome" placeholder="Digite seu segundo" required>
+                        </div>
+
+                        <div class="input-box">
+                            <label for="email">Email</label>
+                            <input id="email" type="email" name="email" placeholder="Digite seu Email" required>
+                        </div>
+
+                        <div class="input-box">
+                            <label for="number">Celular</label>
+                            <input id="number" type="tel" name="celular" placeholder="Digite seu Celular" required>
+                        </div>
+
+                        <div class="input-box">
+                            <label for="password">Senha</label>
+                            <input id="password" type="password" name="senha" placeholder="Digite uma Senha" required>
+                        </div>
+
+                        <div class="input-box">
+                            <label for="Confirmpassword">Confirme sua Senha</label>
+                            <input id="Confirmpassword" type="password" name="Confirmasenha" placeholder="Digite uma Senha" required>
+                        </div>
+                    </div>
+                    <div class="gender-inputs">
+                        <div class="gender-title">
+                            <h6>Genero</h6>
+                        </div>
+
+                        <div class="gender-group">
+                            <div class="gender-input">
+                                <input type="radio" id="famale" name="genero" value="Feminino">
+                                <label for="famale">Feminino</label>
+                            </div>
+
+                            <div class="gender-input">
+                                <input type="radio" id="male" name="genero" value="Maculino">
+                                <label for="male">Masculino</label>
+                            </div>
+
+                            <div class="gender-input">
+                                <input type="radio" id="others" name="genero" value="Outros">
+                                <label for="others">Outros</label>
+                            </div>
+
+                            <div class="gender-input">
+                                <input type="radio" id="none" name="genero" value="Prefiro não dizer">
+                                <label for="none">Prefiro Não dizer</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="continue-button">
+                        <button type="submit" class="Botao">Cadastrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="~/JavaScript/javascript.js"></script>
+</body>
+</html>
