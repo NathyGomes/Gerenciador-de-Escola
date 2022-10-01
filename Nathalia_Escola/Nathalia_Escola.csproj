@@ -150,7 +150,7 @@
     <Content Include="Cadastro\Cadastro_Prof\cadastro_prof.cshtml" />
     <Content Include="Cadastro\ValidaCadastro.cshtml" />
     <None Include="packages.config" />
-    <Content Include="menu.cshtml" />
+    <Content Include="Home\menu.cshtml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
