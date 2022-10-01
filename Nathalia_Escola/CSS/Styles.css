@@ -6,6 +6,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Ubuntu', sans-serif;
+    list-style:none;
 }
 
 .body-login {
@@ -28,6 +29,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background: #110529;
+}
+
+.body-menu {
+    font-family: sans-serif;
     background: #110529;
 }
 
@@ -329,6 +335,29 @@
     background: #00ff88;
     cursor: pointer;
     box-shadow: 0px 10px 40px -12px #00ff8052;
+}
+.nav {
+    background: #00ff88;
+    height:80px;
+    width:100%;
+}
+
+.logo {
+    color: #f0ffffde;
+    font-size: 35px;
+    line-height: 80px;
+    padding:0 100px;
+    font-weight: bold;
+}
+
+.nav ul{
+    float:right;
+    margin: 20px;
+}
+.nav  ul  li{
+    display:inline-block;
+    line-height:80px;
+    margin: 0 5px;
 }
 
 @media only screen and (max-width: 950px) {
