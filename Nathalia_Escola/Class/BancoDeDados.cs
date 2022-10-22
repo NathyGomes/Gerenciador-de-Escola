@@ -22,13 +22,13 @@ namespace Nathalia_Escola.Class
             private static void Initialize()
             {
                 //server = "localhost";
-                server = "10.200.119.241";
+                server = "localhost";
                 //database = "connectcsharptomysql";
-                database = "Banco_Escola";
+                database = "db_nathalia";
                 //uid = "username";
-                uid = "admin";
+                uid = "localhost";
                 //password = "password";
-                password = "senai";
+                password = "";
                 string myConnectionString;
                 myConnectionString = "SERVER=" + server + ";" + "DATABASE=" +
                 database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";

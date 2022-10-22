@@ -1,0 +1,43 @@
+@using Nathalia_Escola.Class;
+
+@{
+    //Conecta com o BD
+    BancoDeDados.DBConnect();
+
+    //Criar um objeto pessoa
+    pessoas usuario = new pessoas();
+
+    //Buscar os dados do formulario pelo método POST e inserir no objeto cliente
+    usuario.cpf = Request.Form["cpfid"];
+    usuario.senha = Request.Form["senhaid"];
+    string cpf = usuario.cpf;
+    string nivel = Fuction.Nivel_acesso(usuario);
+
+
+    if (Fuction.Login(usuario.cpf, usuario.senha))
+    {
+        HttpCookie cookie = new HttpCookie("UserLogin"); //Cria a estancia do obj HttpCookie passando o nome do mesmo
+        cookie.Value = (nivel); //Define o valor do cookie
+        HttpCookie cookiecpf = new HttpCookie("UserCPF");
+        cookiecpf.Value = (cpf);
+        DateTime dtNow = DateTime.Now; //Time para expiração (10min)
+        TimeSpan tsMinute = new TimeSpan(0, 0, 60, 0);
+        cookie.Expires = dtNow + tsMinute;
+        Response.Cookies.Add(cookie); //Adiciona o cookie
+        Response.Cookies.Add(cookiecpf);
+
+        //Redireciona o usuário para a área de logado
+
+        <text>
+            <script>window.location.href = "/Home/home.cshtml";</script>
+        </text>
+    }
+    else
+    {
+        //Redireciona o usuário para a pagina inicial
+        <text>
+            <script>window.location.href = "/Index.cshtml";
+                alert("SENHA OU CPF INCORRETOS, TENTE NOVAMENTE");</script>
+        </text>
+    }
+}
